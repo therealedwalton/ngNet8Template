@@ -11,6 +11,7 @@ import { AuthGuard } from './app/Identity/guard';
 import { AuthInterceptor } from './app/Identity/interceptor';
 import { Router } from '@angular/router';
 import { HTTP_INTERCEPTORS, withInterceptorsFromDi, provideHttpClient } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 bootstrapApplication(AppComponent, {
@@ -26,7 +27,7 @@ bootstrapApplication(AppComponent, {
         },
         AuthGuard,
         AuthService,
-        provideHttpClient(withInterceptorsFromDi())
+        provideHttpClient(withInterceptorsFromDi()), provideAnimationsAsync()
     ]
 })
   .catch(err => console.error(err));
