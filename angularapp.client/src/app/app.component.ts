@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './Identity/auth-service';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 interface WeatherForecast {
   date: string;
@@ -11,9 +11,11 @@ interface WeatherForecast {
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    standalone: true,
+    imports: [RouterOutlet]
 })
 export class AppComponent implements OnInit {
   public forecasts: WeatherForecast[] = [];

@@ -1,10 +1,13 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AuthService } from "../auth-service";
+import { NgIf, NgFor } from "@angular/common";
 
 @Component({
-  selector: 'app-register-component',
-  templateUrl: './register.component.html'
+    selector: 'app-register-component',
+    templateUrl: './register.component.html',
+    standalone: true,
+    imports: [NgIf, FormsModule, ReactiveFormsModule, NgFor]
 })
 export class RegisterComponent implements OnInit {
   errors: string[] = [];

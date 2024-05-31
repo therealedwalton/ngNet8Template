@@ -1,11 +1,14 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Router } from "@angular/router";
 import { AuthService } from "../auth-service";
+import { NgIf } from "@angular/common";
 
 @Component({
-  selector: 'app-signin-component',
-  templateUrl: './signin.component.html'
+    selector: 'app-signin-component',
+    templateUrl: './signin.component.html',
+    standalone: true,
+    imports: [NgIf, FormsModule, ReactiveFormsModule]
 })
 export class SignInComponent implements OnInit {
   loginForm!: FormGroup;
